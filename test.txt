@@ -1,0 +1,142 @@
+Jupyter Notebook
+Untitled
+Last Checkpoint: 12 minutes ago
+(autosaved)
+Current Kernel Logo
+Python 3 
+File
+Edit
+View
+Insert
+Cell
+Kernel
+Widgets
+Help
+
+sc
+sc
+SparkContext
+
+Spark UI
+
+Version
+v2.4.3
+Master
+local[*]
+AppName
+PySparkShell
+lines = sc.textFile('license.txt')
+lines.count()
+---------------------------------------------------------------------------
+Py4JJavaError                             Traceback (most recent call last)
+~/spark/python/pyspark/sql/utils.py in deco(*a, **kw)
+     62         try:
+---> 63             return f(*a, **kw)
+     64         except py4j.protocol.Py4JJavaError as e:
+
+~/spark/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py in get_return_value(answer, gateway_client, target_id, name)
+    327                     "An error occurred while calling {0}{1}{2}.\n".
+--> 328                     format(target_id, ".", name), value)
+    329             else:
+
+Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.
+: java.lang.IllegalArgumentException: Unsupported class file major version 55
+	at org.apache.xbean.asm6.ClassReader.<init>(ClassReader.java:166)
+	at org.apache.xbean.asm6.ClassReader.<init>(ClassReader.java:148)
+	at org.apache.xbean.asm6.ClassReader.<init>(ClassReader.java:136)
+	at org.apache.xbean.asm6.ClassReader.<init>(ClassReader.java:237)
+	at org.apache.spark.util.ClosureCleaner$.getClassReader(ClosureCleaner.scala:49)
+	at org.apache.spark.util.FieldAccessFinder$$anon$3$$anonfun$visitMethodInsn$2.apply(ClosureCleaner.scala:517)
+	at org.apache.spark.util.FieldAccessFinder$$anon$3$$anonfun$visitMethodInsn$2.apply(ClosureCleaner.scala:500)
+	at scala.collection.TraversableLike$WithFilter$$anonfun$foreach$1.apply(TraversableLike.scala:733)
+	at scala.collection.mutable.HashMap$$anon$1$$anonfun$foreach$2.apply(HashMap.scala:134)
+	at scala.collection.mutable.HashMap$$anon$1$$anonfun$foreach$2.apply(HashMap.scala:134)
+	at scala.collection.mutable.HashTable$class.foreachEntry(HashTable.scala:236)
+	at scala.collection.mutable.HashMap.foreachEntry(HashMap.scala:40)
+	at scala.collection.mutable.HashMap$$anon$1.foreach(HashMap.scala:134)
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:732)
+	at org.apache.spark.util.FieldAccessFinder$$anon$3.visitMethodInsn(ClosureCleaner.scala:500)
+	at org.apache.xbean.asm6.ClassReader.readCode(ClassReader.java:2175)
+	at org.apache.xbean.asm6.ClassReader.readMethod(ClassReader.java:1238)
+	at org.apache.xbean.asm6.ClassReader.accept(ClassReader.java:631)
+	at org.apache.xbean.asm6.ClassReader.accept(ClassReader.java:355)
+	at org.apache.spark.util.ClosureCleaner$$anonfun$org$apache$spark$util$ClosureCleaner$$clean$14.apply(ClosureCleaner.scala:307)
+	at org.apache.spark.util.ClosureCleaner$$anonfun$org$apache$spark$util$ClosureCleaner$$clean$14.apply(ClosureCleaner.scala:306)
+	at scala.collection.immutable.List.foreach(List.scala:392)
+	at org.apache.spark.util.ClosureCleaner$.org$apache$spark$util$ClosureCleaner$$clean(ClosureCleaner.scala:306)
+	at org.apache.spark.util.ClosureCleaner$.clean(ClosureCleaner.scala:162)
+	at org.apache.spark.SparkContext.clean(SparkContext.scala:2326)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2100)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2126)
+	at org.apache.spark.rdd.RDD$$anonfun$collect$1.apply(RDD.scala:945)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:363)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:944)
+	at org.apache.spark.api.python.PythonRDD$.collectAndServe(PythonRDD.scala:166)
+	at org.apache.spark.api.python.PythonRDD.collectAndServe(PythonRDD.scala)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+During handling of the above exception, another exception occurred:
+
+IllegalArgumentException                  Traceback (most recent call last)
+<ipython-input-12-c800bb714bd8> in <module>
+----> 1 lines.count()
+
+~/spark/python/pyspark/rdd.py in count(self)
+   1053         3
+   1054         """
+-> 1055         return self.mapPartitions(lambda i: [sum(1 for _ in i)]).sum()
+   1056 
+   1057     def stats(self):
+
+~/spark/python/pyspark/rdd.py in sum(self)
+   1044         6.0
+   1045         """
+-> 1046         return self.mapPartitions(lambda x: [sum(x)]).fold(0, operator.add)
+   1047 
+   1048     def count(self):
+
+~/spark/python/pyspark/rdd.py in fold(self, zeroValue, op)
+    915         # zeroValue provided to each partition is unique from the one provided
+    916         # to the final reduce call
+--> 917         vals = self.mapPartitions(func).collect()
+    918         return reduce(op, vals, zeroValue)
+    919 
+
+~/spark/python/pyspark/rdd.py in collect(self)
+    814         """
+    815         with SCCallSiteSync(self.context) as css:
+--> 816             sock_info = self.ctx._jvm.PythonRDD.collectAndServe(self._jrdd.rdd())
+    817         return list(_load_from_socket(sock_info, self._jrdd_deserializer))
+    818 
+
+~/spark/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py in __call__(self, *args)
+   1255         answer = self.gateway_client.send_command(command)
+   1256         return_value = get_return_value(
+-> 1257             answer, self.gateway_client, self.target_id, self.name)
+   1258 
+   1259         for temp_arg in temp_args:
+
+~/spark/python/pyspark/sql/utils.py in deco(*a, **kw)
+     77                 raise QueryExecutionException(s.split(': ', 1)[1], stackTrace)
+     78             if s.startswith('java.lang.IllegalArgumentException: '):
+---> 79                 raise IllegalArgumentException(s.split(': ', 1)[1], stackTrace)
+     80             raise
+     81     return deco
+
+IllegalArgumentException: 'Unsupported class file major version 55'
+
+​
+
