@@ -6,31 +6,34 @@ help: ## Displays target and their Function.
 .DEFAULT_GOAL := help
 
 
-build-spark-image: ##	Builds the spark-image from Dockerfile
-	docker build -t pyspark_develeopment .
+build-spark-image: ## Builds the spark-image from Dockerfile
+	docker build -t rj1234/pyspark_development:$$(date +%Y%m%d%H%M%S) .
 
-run-spark-container: ##	Build and run the spark-container
+run-spark-container: ## Build and run the spark-container
 	docker run -v /home/rj/Playground/bigdata:/mnt/host/Playground/bigdata \
 			   -w /mnt/host -ti \
 			   -p 8888:8888 \
 			   --env JUPYTER_TOKEN=root \
 			   --name pyspark_develeopment_container \
-			   pyspark_develeopment
+			   rj1234/pyspark_development
 
-start-spark-container: ##	Start the spark-container
+start-spark-container: ## Start the spark-container
 	docker start pyspark_develeopment_container
 	docker exec -t -i pyspark_develeopment_container bash
 
-stop-spark-container:	##	Stop the spark-container
+stop-spark-container:	## Stop the spark-container
 	docker stop pyspark_develeopment_container
 
-remove-all-containers:	##	Remove the spark-container
+remove-all-containers:	## Remove the spark-container
 	docker rm $$(docker ps -a -q)
 
-remove-all-containers:	##	***REMOVES*** ALL CONTAINERS
+remove-all-containers:	## ***REMOVES*** ALL CONTAINERS
 	docker rm $$(docker ps -a -q)
 
-clean: check_clean	##	***REMOVE***  ALL CONTAINERS AND IMAGES!!!
+push: ## Push to the docker hub
+	docker push rj1234/pyspark_development:latest_$$(date +%Y%m%d%H%M%S)
+
+clean: check_clean	## ***REMOVE***  ALL CONTAINERS AND IMAGES!!!
 	docker rm $$(docker ps -a -q)
 	docker rmi $$(docker images -q)
 
