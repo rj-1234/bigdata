@@ -24,8 +24,9 @@ start-spark-container: ## Start the spark-container
 stop-spark-container:	## Stop the spark-container
 	docker stop pyspark_develeopment_container
 
-remove-all-containers:	## Remove the spark-container
-	docker rm $$(docker ps -a -q)
+remove-spark-containers:	## Remove the spark-container
+	docker stop pyspark_develeopment_container
+	docker rm pyspark_develeopment_container
 
 remove-all-containers:	## ***REMOVES*** ALL CONTAINERS
 	docker rm $$(docker ps -a -q)
