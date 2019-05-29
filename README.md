@@ -19,7 +19,7 @@
 - make remove-spark-container 
 > ***Remove*** the spark-container
 - make remove-all-containers 
-> ***Remove*** the spark-container
+> ***Remove*** all containers
 - make push 
 > Push to the docker hub
 - make clean 
