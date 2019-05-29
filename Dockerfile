@@ -31,19 +31,17 @@ RUN tar -xzf spark-2.4.3-bin-hadoop2.7.tgz && \
     rm spark-2.4.3-bin-hadoop2.7.tgz
 
 # Configure environment
-ENV CONDA_DIR /root/anaconda
-ENV SPARK_DIR /root/spark
-ENV PATH $CONDA_DIR/bin:${PATH}
-ENV PATH $SPARK_DIR/bin:${PATH}
+ENV CONDA_HOME /root/anaconda
+ENV SPARK_HOME /root/spark
+ENV PATH $CONDA_HOME/bin:${PATH}
+ENV PATH $SPARK_HOME/bin:${PATH}
 RUN echo 
 RUN echo ${PATH}
 RUN echo 
 
-#ENV PATH="~/spark/bin:${PATH}"
-
 # Environment vaiables for Spark to use Anaconda Python and jupyter notebook
-ENV PYSPARK_PYTHON $CONDA_DIR/bin/python3
-ENV PYSPARK_DRIVER_PYTHON $CONDA_DIR/bin/jupyter
+ENV PYSPARK_PYTHON $CONDA_HOME/bin/python3
+ENV PYSPARK_DRIVER_PYTHON $CONDA_HOME/bin/jupyter
 ENV PYSPARK_DRIVER_PYTHON_OPTS "notebook \
 								--no-browser \
 								--port=8888 \

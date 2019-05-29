@@ -7,7 +7,7 @@ help: ## Displays target and their Function.
 
 
 build-spark-image: ## Builds the spark-image from Dockerfile
-	docker build -t rj1234/pyspark_development:$$(date +%Y%m%d%H%M%S) .
+	docker build -t rj1234/pyspark_development:latest .
 
 run-spark-container: ## Build and run the spark-container
 	docker run -v /home/rj/Playground/bigdata:/mnt/host/Playground/bigdata \
@@ -15,7 +15,16 @@ run-spark-container: ## Build and run the spark-container
 			   -p 8888:8888 \
 			   --env JUPYTER_TOKEN=root \
 			   --name pyspark_develeopment_container \
-			   rj1234/pyspark_development
+			   rj1234/pyspark_development:latest
+
+show-all-containers: ## Shows all available docker containers
+	docker ps -a
+
+show-running-containers: ## Shows the running containers
+	docker ps
+
+show-images: ## Shows all docker images locally
+	docker images
 
 start-spark-container: ## Start the spark-container
 	docker start pyspark_develeopment_container
