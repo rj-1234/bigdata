@@ -1,0 +1,670 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+
+  
+
+  
+
+  <title>Kepler.gl</title>
+
+  
+
+  
+
+  
+  
+  <link href="http://d1a3f4spazzrp4.cloudfront.net/kepler.gl/uber-fonts/4.0.0/superfine.css" rel="stylesheet">
+  
+  
+  <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css" rel="stylesheet">
+  
+
+  
+    
+    <script src="https://unpkg.com/react@16.8.4/umd/react.production.min.js" type="text/javascript" crossorigin></script>
+  
+    
+    <script src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.production.min.js" type="text/javascript" crossorigin></script>
+  
+    
+    <script src="https://unpkg.com/redux@3.7.2/dist/redux.js" type="text/javascript" crossorigin></script>
+  
+    
+    <script src="https://unpkg.com/react-redux@5.1.1/dist/react-redux.min.js" type="text/javascript" crossorigin></script>
+  
+    
+    <script src="https://unpkg.com/react-virtualized@9.18.5/dist/umd/react-virtualized.js" type="text/javascript" crossorigin></script>
+  
+    
+    <script src="https://unpkg.com/styled-components@4.1.3/dist/styled-components.min.js" type="text/javascript" crossorigin></script>
+  
+    
+    <script src="https://unpkg.com/kepler.gl@1.1.1/umd/keplergl.min.js" type="text/javascript" crossorigin></script>
+  
+  <style type="text/css">
+    font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 0.875em;
+    line-height: 1.71429;
+
+    *,
+    *:before,
+    *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0; padding: 0;
+    }
+  </style>
+</head>
+<body><script>window.__keplerglDataConfig = {"config": {}, "data": {"Start-Locations": {"index": [527506, 520471, 138871, 429941, 425336, 71976, 643549, 236824, 383240, 516383, 658640, 545640, 154079, 521352, 175850, 170994, 661787, 191086, 538091, 675889, 617236, 139542, 284784, 514172, 218694, 68216, 108923, 219764, 630741, 222683, 220520, 311411, 19883, 71825, 115258, 86371, 402503, 509424, 243202, 64248, 264144, 541398, 139496, 235800, 457411, 429493, 594074, 289594, 190326, 505520, 239881, 540605, 248314, 269976, 217529, 268091, 555384, 543152, 370632, 552803, 60426, 134143, 111279, 552437, 449381, 314659, 224070, 116865, 371561, 351984, 84656, 281657, 466472, 596366, 129164, 379443, 115225, 412239, 22056, 117947, 626166, 546130, 75055, 296938, 621648, 269872, 598844, 303199, 106758, 69720, 364371, 549501, 374040, 458232, 76408, 457342, 417761, 289855, 569567, 449174], "columns": ["tripduration", "starttime", "stoptime", "start station latitude", "start station longitude", "end station latitude", "end station longitude", "bikeid", "usertype", "gender", "geometry"], "data": [["583", "2013-09-25 06:43:23", "2013-09-25 06:53:06", 40.73543930053711, -73.99453735351562, 40.72165298461914, -74.00234985351562, "17432", "Customer", "0", "POINT (40.7354393005371094 -73.9945373535156250)"], ["787", "2013-09-22 19:57:01", "2013-09-22 20:10:08", 40.75320053100586, -73.97798919677734, 40.75849151611328, -73.9592056274414, "17219", "Customer", "0", "POINT (40.7532005310058594 -73.9779891967773438)"], ["1206", "2013-08-17 13:43:44", "2013-08-17 14:03:50", 40.74195098876953, -74.0080337524414, 40.74235534667969, -73.98915100097656, "18179", "Customer", "0", "POINT (40.7419509887695312 -74.0080337524414062)"], ["889", "2013-09-04 12:43:46", "2013-09-04 12:58:35", 40.76695251464844, -73.98169708251953, 40.76591110229492, -73.9763412475586, "16421", "Customer", "0", "POINT (40.7669525146484375 -73.9816970825195312)"], ["1569", "2013-09-02 21:43:59", "2013-09-02 22:10:08", 40.726280212402344, -73.98977661132812, 40.71044921875, -73.96087646484375, "19081", "Customer", "0", "POINT (40.7262802124023438 -73.9897766113281250)"], ["406", "2013-08-06 14:37:01", "2013-08-06 14:43:47", 40.73726272583008, -73.99238586425781, 40.72903823852539, -73.99404907226562, "15466", "Customer", "0", "POINT (40.7372627258300781 -73.9923858642578125)"], ["1585", "2014-02-25 20:24:24", "2014-02-25 20:50:49", 40.74345397949219, -74.00003814697266, 40.762271881103516, -73.98788452148438, "16514", "Customer", "0", "POINT (40.7434539794921875 -74.0000381469726562)"], ["892", "2013-10-07 22:07:41", "2013-10-07 22:22:33", 40.75022506713867, -73.9712142944336, 40.72842025756836, -73.98713684082031, "14531", "Customer", "0", "POINT (40.7502250671386719 -73.9712142944335938)"], ["1567", "2013-07-14 17:42:18", "2013-07-14 18:08:25", 40.68312454223633, -73.97895050048828, 40.691650390625, -73.9999771118164, "19501", "Customer", "0", "POINT (40.6831245422363281 -73.9789505004882812)"], ["1797", "2013-09-22 13:05:42", "2013-09-22 13:35:39", 40.73423385620117, -73.98692321777344, 40.76439666748047, -73.97371673583984, "16772", "Customer", "0", "POINT (40.7342338562011719 -73.9869232177734375)"], ["1336", "2013-09-29 00:31:34", "2013-09-29 00:53:50", 40.70281982421875, -73.98765563964844, 40.71273422241211, -74.00460815429688, "18032", "Customer", "0", "POINT (40.7028198242187500 -73.9876556396484375)"], ["5210", "2013-12-03 18:15:24", "2013-12-03 19:42:14", 40.757568359375, -73.99098205566406, 40.7509765625, -73.98765563964844, "17785", "Customer", "0", "POINT (40.7575683593750000 -73.9909820556640625)"], ["1639", "2013-08-18 20:22:47", "2013-08-18 20:50:06", 40.71335983276367, -74.0093765258789, 40.76695251464844, -73.98169708251953, "15374", "Customer", "0", "POINT (40.7133598327636719 -74.0093765258789062)"], ["160", "2013-09-23 10:34:36", "2013-09-23 10:37:16", 40.76439666748047, -73.97371673583984, 40.76591110229492, -73.9763412475586, "17978", "Customer", "0", "POINT (40.7643966674804688 -73.9737167358398438)"], ["1984", "2013-08-24 10:02:23", "2013-08-24 10:35:27", 40.72087478637695, -73.9808578491211, 40.7053108215332, -74.0061264038086, "16116", "Customer", "0", "POINT (40.7208747863769531 -73.9808578491210938)"], ["1542", "2013-08-23 11:34:54", "2013-08-23 12:00:36", 40.73454666137695, -73.99073791503906, 40.737815856933594, -73.99994659423828, "18215", "Customer", "0", "POINT (40.7345466613769531 -73.9907379150390625)"], ["12069", "2013-09-29 14:15:27", "2013-09-29 17:36:36", 40.7027702331543, -73.99383544921875, 40.72165298461914, -74.00234985351562, "16356", "Customer", "0", "POINT (40.7027702331542969 -73.9938354492187500)"], ["1836", "2013-08-25 16:53:00", "2013-08-25 17:23:36", 40.737815856933594, -73.99994659423828, 40.739322662353516, -74.00811767578125, "18448", "Customer", "0", "POINT (40.7378158569335938 -73.9999465942382812)"], ["864", "2013-09-28 10:58:54", "2013-09-28 11:13:18", 40.73223114013672, -73.98889923095703, 40.732913970947266, -74.00711059570312, "19283", "Customer", "0", "POINT (40.7322311401367188 -73.9888992309570312)"], ["7134", "2013-08-31 14:37:17", "2013-08-31 16:36:11", 40.71534729003906, -73.96024322509766, 40.71605682373047, -73.99190521240234, "20582", "Customer", "0", "POINT (40.7153472900390625 -73.9602432250976562)"], ["2345", "2013-07-29 16:04:19", "2013-07-29 16:43:24", 40.76695251464844, -73.98169708251953, 40.74235534667969, -73.98915100097656, "16714", "Customer", "0", "POINT (40.7669525146484375 -73.9816970825195312)"], ["1862", "2013-08-17 14:15:50", "2013-08-17 14:46:52", 40.75149154663086, -73.97798919677734, 40.76591110229492, -73.9763412475586, "20612", "Customer", "0", "POINT (40.7514915466308594 -73.9779891967773438)"], ["499", "2013-10-21 12:26:53", "2013-10-21 12:35:12", 40.75155258178711, -73.99393463134766, 40.76341247558594, -73.99667358398438, "17949", "Customer", "0", "POINT (40.7515525817871094 -73.9939346313476562)"], ["1486", "2013-09-21 21:17:29", "2013-09-21 21:42:15", 40.74147415161133, -73.98320770263672, 40.72317886352539, -73.99479675292969, "15342", "Customer", "0", "POINT (40.7414741516113281 -73.9832077026367188)"], ["732", "2013-10-03 17:59:57", "2013-10-03 18:12:09", 40.7520637512207, -73.98163604736328, 40.74422073364258, -73.9712142944336, "19037", "Customer", "0", "POINT (40.7520637512207031 -73.9816360473632812)"], ["2962", "2013-08-05 18:38:58", "2013-08-05 19:28:20", 40.71533966064453, -74.01658630371094, 40.74422073364258, -73.9712142944336, "16369", "Customer", "0", "POINT (40.7153396606445312 -74.0165863037109375)"], ["228", "2013-08-11 18:26:55", "2013-08-11 18:30:43", 40.711463928222656, -74.00552368164062, 40.711463928222656, -74.00552368164062, "16359", "Customer", "0", "POINT (40.7114639282226562 -74.0055236816406250)"], ["1602", "2013-10-04 08:12:03", "2013-10-04 08:38:45", 40.74195098876953, -74.0080337524414, 40.75320053100586, -73.97798919677734, "16077", "Customer", "0", "POINT (40.7419509887695312 -74.0080337524414062)"], ["1294", "2014-01-02 13:08:36", "2014-01-02 13:30:10", 40.739356994628906, -73.99932098388672, 40.74549865722656, -74.00196838378906, "16703", "Customer", "0", "POINT (40.7393569946289062 -73.9993209838867188)"], ["2238", "2013-10-04 18:18:57", "2013-10-04 18:56:15", 40.7191047668457, -73.9997329711914, 40.70148468017578, -73.986572265625, "17889", "Customer", "0", "POINT (40.7191047668457031 -73.9997329711914062)"], ["1575", "2013-10-04 12:17:34", "2013-10-04 12:43:49", 40.7634391784668, -73.98268127441406, 40.75139617919922, -74.0052261352539, "18471", "Customer", "0", "POINT (40.7634391784667969 -73.9826812744140625)"], ["1904", "2013-07-03 12:53:42", "2013-07-03 13:25:26", 40.72779083251953, -73.98564910888672, 40.70834732055664, -74.01713562011719, "18439", "Customer", "0", "POINT (40.7277908325195312 -73.9856491088867188)"], ["1204", "2013-11-09 16:31:32", "2013-11-09 16:51:36", 40.69766616821289, -73.9847640991211, 40.71273422241211, -74.00460815429688, "16019", "Customer", "0", "POINT (40.6976661682128906 -73.9847640991210938)"], ["1888", "2013-08-06 14:14:09", "2013-08-06 14:45:37", 40.75038146972656, -73.98339080810547, 40.770511627197266, -73.988037109375, "16458", "Customer", "0", "POINT (40.7503814697265625 -73.9833908081054688)"], ["353", "2013-08-12 20:57:47", "2013-08-12 21:03:40", 40.7370491027832, -73.9900894165039, 40.7370491027832, -73.9900894165039, "15337", "Customer", "0", "POINT (40.7370491027832031 -73.9900894165039062)"], ["1150", "2013-08-09 23:34:21", "2013-08-09 23:53:31", 40.68981170654297, -73.97492980957031, 40.6917839050293, -73.9737319946289, "17872", "Customer", "0", "POINT (40.6898117065429688 -73.9749298095703125)"], ["831", "2013-07-19 00:59:11", "2013-07-19 01:13:02", 40.768253326416016, -73.98863983154297, 40.7489013671875, -73.9760513305664, "19343", "Customer", "0", "POINT (40.7682533264160156 -73.9886398315429688)"], ["70", "2013-09-21 13:44:08", "2013-09-21 13:45:18", 40.705692291259766, -74.01677703857422, 40.705692291259766, -74.01677703857422, "19904", "Customer", "0", "POINT (40.7056922912597656 -74.0167770385742188)"], ["3216", "2013-10-10 17:16:50", "2013-10-10 18:10:26", 40.7352409362793, -73.98758697509766, 40.76591110229492, -73.9763412475586, "17987", "Customer", "0", "POINT (40.7352409362792969 -73.9875869750976562)"], ["731", "2013-08-05 08:50:39", "2013-08-05 09:02:50", 40.700469970703125, -73.991455078125, 40.71273422241211, -74.00460815429688, "14727", "Customer", "0", "POINT (40.7004699707031250 -73.9914550781250000)"], ["444", "2013-10-15 18:00:51", "2013-10-15 18:08:15", 40.74674606323242, -74.00775909423828, 40.756404876708984, -73.99002838134766, "19222", "Customer", "0", "POINT (40.7467460632324219 -74.0077590942382812)"], ["1277", "2013-09-28 15:44:45", "2013-09-28 16:06:02", 40.71605682373047, -73.99190521240234, 40.7025146484375, -74.01426696777344, "20202", "Customer", "0", "POINT (40.7160568237304688 -73.9919052124023438)"], ["888", "2013-08-17 14:12:55", "2013-08-17 14:27:43", 40.7491569519043, -73.9916000366211, 40.75149154663086, -73.97798919677734, "15676", "Customer", "0", "POINT (40.7491569519042969 -73.9916000366210938)"], ["823", "2013-10-07 10:12:58", "2013-10-07 10:26:41", 40.76064682006836, -73.98442840576172, 40.757568359375, -73.99098205566406, "17781", "Customer", "0", "POINT (40.7606468200683594 -73.9844284057617188)"], ["887", "2013-09-08 19:54:14", "2013-09-08 20:09:01", 40.7370491027832, -73.9900894165039, 40.755001068115234, -73.98014068603516, "18349", "Customer", "0", "POINT (40.7370491027832031 -73.9900894165039062)"], ["6751", "2013-09-04 10:57:00", "2013-09-04 12:49:31", 40.76439666748047, -73.97371673583984, 40.7691535949707, -73.98191833496094, "15660", "Customer", "0", "POINT (40.7643966674804688 -73.9737167358398438)"], ["640", "2013-07-26 16:04:34", "2013-07-26 16:15:14", 40.7608757019043, -74.00277709960938, 40.7191162109375, -74.00666809082031, "19796", "Customer", "0", "POINT (40.7608757019042969 -74.0027770996093750)"], ["1524", "2013-10-23 12:45:59", "2013-10-23 13:11:23", 40.721099853515625, -73.99192810058594, 40.7520637512207, -73.98163604736328, "19799", "Customer", "0", "POINT (40.7210998535156250 -73.9919281005859375)"], ["358", "2013-08-25 16:03:16", "2013-08-25 16:09:14", 40.72205352783203, -73.9891128540039, 40.760658264160156, -73.98042297363281, "17349", "Customer", "0", "POINT (40.7220535278320312 -73.9891128540039062)"], ["2441", "2013-09-20 16:57:23", "2013-09-20 17:38:04", 40.732242584228516, -74.0002670288086, 40.73028564453125, -73.99076843261719, "17973", "Customer", "0", "POINT (40.7322425842285156 -74.0002670288085938)"], ["818", "2013-10-09 07:50:31", "2013-10-09 08:04:09", 40.70834732055664, -74.01713562011719, 40.72165298461914, -74.00234985351562, "18424", "Customer", "0", "POINT (40.7083473205566406 -74.0171356201171875)"], ["908", "2013-09-28 14:53:00", "2013-09-28 15:08:08", 40.752994537353516, -73.98721313476562, 40.74235534667969, -73.98915100097656, "17997", "Customer", "0", "POINT (40.7529945373535156 -73.9872131347656250)"], ["815", "2013-10-12 14:02:22", "2013-10-12 14:15:57", 40.71754837036133, -74.01322174072266, 40.724910736083984, -74.00154876708984, "17962", "Customer", "0", "POINT (40.7175483703613281 -74.0132217407226562)"], ["1010", "2013-10-18 10:38:02", "2013-10-18 10:54:52", 40.75513458251953, -73.98657989501953, 40.72317886352539, -73.99479675292969, "17993", "Customer", "0", "POINT (40.7551345825195312 -73.9865798950195312)"], ["1413", "2013-10-03 14:20:30", "2013-10-03 14:44:03", 40.73726272583008, -73.99238586425781, 40.76439666748047, -73.97371673583984, "15006", "Customer", "0", "POINT (40.7372627258300781 -73.9923858642578125)"], ["479", "2013-10-17 13:59:13", "2013-10-17 14:07:12", 40.75992202758789, -73.97648620605469, 40.755104064941406, -73.97498321533203, "15309", "Customer", "0", "POINT (40.7599220275878906 -73.9764862060546875)"], ["1246", "2013-12-22 13:00:27", "2013-12-22 13:21:13", 40.75320053100586, -73.97798919677734, 40.73454666137695, -73.99073791503906, "17296", "Customer", "0", "POINT (40.7532005310058594 -73.9779891967773438)"], ["385", "2013-09-28 17:38:36", "2013-09-28 17:45:01", 40.74674606323242, -74.00775909423828, 40.74674606323242, -74.00775909423828, "19484", "Customer", "0", "POINT (40.7467460632324219 -74.0077590942382812)"], ["2740", "2013-07-13 13:30:19", "2013-07-13 14:15:59", 40.760955810546875, -73.96724700927734, 40.74620056152344, -73.98855590820312, "18278", "Customer", "0", "POINT (40.7609558105468750 -73.9672470092773438)"], ["1305", "2013-12-21 10:45:47", "2013-12-21 11:07:32", 40.72317886352539, -73.99479675292969, 40.74549865722656, -74.00196838378906, "18249", "Customer", "0", "POINT (40.7231788635253906 -73.9947967529296875)"], ["1446", "2013-08-04 17:57:47", "2013-08-04 18:21:53", 40.70834732055664, -74.01713562011719, 40.74195098876953, -74.0080337524414, "15027", "Customer", "0", "POINT (40.7083473205566406 -74.0171356201171875)"], ["1497", "2013-08-17 08:38:43", "2013-08-17 09:03:40", 40.760093688964844, -73.99462127685547, 40.7489013671875, -73.9760513305664, "17730", "Customer", "0", "POINT (40.7600936889648438 -73.9946212768554688)"], ["1775", "2013-08-11 23:47:14", "2013-08-12 00:16:49", 40.713077545166016, -73.9985122680664, 40.74147415161133, -73.98320770263672, "19525", "Customer", "0", "POINT (40.7130775451660156 -73.9985122680664062)"], ["670", "2013-12-20 20:16:15", "2013-12-20 20:27:25", 40.76591110229492, -73.9763412475586, 40.76695251464844, -73.98169708251953, "21124", "Customer", "0", "POINT (40.7659111022949219 -73.9763412475585938)"], ["582", "2013-09-07 20:34:27", "2013-09-07 20:44:09", 40.72743606567383, -73.99378967285156, 40.734012603759766, -74.00293731689453, "19254", "Customer", "0", "POINT (40.7274360656738281 -73.9937896728515625)"], ["1848", "2013-07-04 09:55:18", "2013-07-04 10:26:06", 40.70471954345703, -74.00926208496094, 40.70471954345703, -74.00926208496094, "18501", "Customer", "0", "POINT (40.7047195434570312 -74.0092620849609375)"], ["7888", "2013-10-05 10:16:27", "2013-10-05 12:27:55", 40.76695251464844, -73.98169708251953, 40.76228713989258, -73.98336029052734, "19864", "Customer", "0", "POINT (40.7669525146484375 -73.9816970825195312)"], ["2444", "2013-08-13 17:21:11", "2013-08-13 18:01:55", 40.72317886352539, -73.99479675292969, 40.75019836425781, -73.99092864990234, "16717", "Customer", "0", "POINT (40.7231788635253906 -73.9947967529296875)"], ["1569", "2013-07-13 14:36:15", "2013-07-13 15:02:24", 40.71754837036133, -74.01322174072266, 40.76341247558594, -73.99667358398438, "19920", "Customer", "0", "POINT (40.7175483703613281 -74.0132217407226562)"], ["861", "2013-07-08 15:51:59", "2013-07-08 16:06:20", 40.72043228149414, -74.01020812988281, 40.72181701660156, -73.99720001220703, "18964", "Customer", "0", "POINT (40.7204322814941406 -74.0102081298828125)"], ["2799", "2013-08-09 15:58:18", "2013-08-09 16:44:57", 40.73331832885742, -73.99510192871094, 40.70834732055664, -74.01713562011719, "15066", "Customer", "0", "POINT (40.7333183288574219 -73.9951019287109375)"], ["1038", "2013-10-20 15:45:45", "2013-10-20 16:03:03", 40.71870803833008, -74.00900268554688, 40.70905685424805, -74.01043701171875, "17944", "Customer", "0", "POINT (40.7187080383300781 -74.0090026855468750)"], ["747", "2013-09-11 14:26:24", "2013-09-11 14:38:51", 40.75513458251953, -73.98657989501953, 40.755001068115234, -73.98014068603516, "19543", "Customer", "0", "POINT (40.7551345825195312 -73.9865798950195312)"], ["1464", "2013-07-26 21:42:55", "2013-07-26 22:07:19", 40.71076202392578, -73.99400329589844, 40.71076202392578, -73.99400329589844, "16619", "Customer", "0", "POINT (40.7107620239257812 -73.9940032958984375)"], ["1019", "2013-08-16 12:08:11", "2013-08-16 12:25:10", 40.734012603759766, -74.00293731689453, 40.755943298339844, -74.00211334228516, "18590", "Customer", "0", "POINT (40.7340126037597656 -74.0029373168945312)"], ["1324", "2013-07-14 13:12:09", "2013-07-14 13:34:13", 40.746646881103516, -73.99391174316406, 40.74058151245117, -74.00550842285156, "16415", "Customer", "0", "POINT (40.7466468811035156 -73.9939117431640625)"], ["501", "2013-08-12 20:45:55", "2013-08-12 20:54:16", 40.70706558227539, -74.00731658935547, 40.730472564697266, -73.98672485351562, "19973", "Customer", "0", "POINT (40.7070655822753906 -74.0073165893554688)"], ["1754", "2013-09-01 11:54:55", "2013-09-01 12:24:09", 40.76064682006836, -73.98442840576172, 40.73649215698242, -73.9970474243164, "15735", "Customer", "0", "POINT (40.7606468200683594 -73.9844284057617188)"], ["1196", "2013-11-10 14:02:23", "2013-11-10 14:22:19", 40.71117401123047, -74.00016784667969, 40.712867736816406, -73.95697784423828, "16034", "Customer", "0", "POINT (40.7111740112304688 -74.0001678466796875)"], ["1212", "2013-08-13 21:46:30", "2013-08-13 22:06:42", 40.72019577026367, -73.98997497558594, 40.73049545288086, -73.99571990966797, "17036", "Customer", "0", "POINT (40.7201957702636719 -73.9899749755859375)"], ["1286", "2013-07-31 12:09:51", "2013-07-31 12:31:17", 40.722293853759766, -73.9914779663086, 40.70823669433594, -74.00530242919922, "17542", "Customer", "0", "POINT (40.7222938537597656 -73.9914779663085938)"], ["1079", "2013-12-04 14:06:39", "2013-12-04 14:24:38", 40.68798065185547, -73.97847747802734, 40.736244201660156, -73.9847412109375, "15745", "Customer", "0", "POINT (40.6879806518554688 -73.9784774780273438)"], ["1115", "2013-08-06 22:45:43", "2013-08-06 23:04:18", 40.69619369506836, -73.99121856689453, 40.711463928222656, -74.00552368164062, "17466", "Customer", "0", "POINT (40.6961936950683594 -73.9912185668945312)"], ["702", "2013-10-26 22:41:32", "2013-10-26 22:53:14", 40.718502044677734, -73.9832992553711, 40.734161376953125, -73.98023986816406, "19465", "Customer", "0", "POINT (40.7185020446777344 -73.9832992553710938)"], ["1371", "2013-07-30 14:05:06", "2013-07-30 14:27:57", 40.744449615478516, -73.9830322265625, 40.730472564697266, -73.98672485351562, "17458", "Customer", "0", "POINT (40.7444496154785156 -73.9830322265625000)"], ["939", "2013-10-18 09:54:11", "2013-10-18 10:09:50", 40.68798065185547, -73.97847747802734, 40.74174118041992, -73.99415588378906, "17947", "Customer", "0", "POINT (40.6879806518554688 -73.9784774780273438)"], ["651", "2013-07-27 12:09:58", "2013-07-27 12:20:49", 40.72874069213867, -74.00749206542969, 40.739322662353516, -74.00811767578125, "19237", "Customer", "0", "POINT (40.7287406921386719 -74.0074920654296875)"], ["880", "2013-07-01 01:10:35", "2013-07-01 01:25:15", 40.72917175292969, -73.99810028076172, 40.73028564453125, -73.99076843261719, "19981", "Customer", "0", "POINT (40.7291717529296875 -73.9981002807617188)"], ["1566", "2013-08-11 16:14:15", "2013-08-11 16:40:21", 40.74549865722656, -74.00196838378906, 40.75155258178711, -73.99393463134766, "19208", "Customer", "0", "POINT (40.7454986572265625 -74.0019683837890625)"], ["1370", "2013-08-05 23:01:58", "2013-08-05 23:24:48", 40.743953704833984, -73.99144744873047, 40.76695251464844, -73.98169708251953, "17445", "Customer", "0", "POINT (40.7439537048339844 -73.9914474487304688)"], ["943", "2013-07-11 16:46:05", "2013-07-11 17:01:48", 40.73028564453125, -73.99076843261719, 40.74394226074219, -73.97966003417969, "15181", "Customer", "0", "POINT (40.7302856445312500 -73.9907684326171875)"], ["685", "2013-12-10 14:49:03", "2013-12-10 15:00:28", 40.755271911621094, -73.98316955566406, 40.750450134277344, -73.99481201171875, "17485", "Customer", "0", "POINT (40.7552719116210938 -73.9831695556640625)"], ["773", "2013-07-13 17:47:37", "2013-07-13 18:00:30", 40.72317886352539, -73.99479675292969, 40.72228240966797, -73.9766845703125, "19806", "Customer", "0", "POINT (40.7231788635253906 -73.9947967529296875)"], ["1507", "2013-09-09 00:19:59", "2013-09-09 00:45:06", 40.70254898071289, -73.9894027709961, 40.70254898071289, -73.9894027709961, "19958", "Customer", "0", "POINT (40.7025489807128906 -73.9894027709960938)"], ["2141", "2013-08-07 12:16:03", "2013-08-07 12:51:44", 40.76341247558594, -73.99667358398438, 40.76341247558594, -73.99667358398438, "17897", "Customer", "0", "POINT (40.7634124755859375 -73.9966735839843750)"], ["1517", "2013-09-08 19:45:57", "2013-09-08 20:11:14", 40.734012603759766, -74.00293731689453, 40.71269226074219, -73.98776245117188, "15776", "Customer", "0", "POINT (40.7340126037597656 -74.0029373168945312)"], ["367", "2013-09-01 18:27:34", "2013-09-01 18:33:41", 40.74174118041992, -73.99415588378906, 40.744876861572266, -73.99530029296875, "17271", "Customer", "0", "POINT (40.7417411804199219 -73.9941558837890625)"], ["1219", "2013-10-23 15:29:46", "2013-10-23 15:50:05", 40.7509765625, -73.98765563964844, 40.74058151245117, -74.00550842285156, "18276", "Customer", "0", "POINT (40.7509765625000000 -73.9876556396484375)"], ["2463", "2013-07-21 14:50:39", "2013-07-21 15:31:42", 40.746917724609375, -74.0045166015625, 40.739322662353516, -74.00811767578125, "17251", "Customer", "0", "POINT (40.7469177246093750 -74.0045166015625000)"], ["1726", "2013-09-07 19:57:02", "2013-09-07 20:25:48", 40.7691535949707, -73.98191833496094, 40.76020431518555, -73.96478271484375, "18504", "Customer", "0", "POINT (40.7691535949707031 -73.9819183349609375)"]]}}, "options": {"readOnly": true}};</script>
+
+
+
+<div id="app-content"></div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("kepler.gl/actions"), require("kepler.gl/components"), require("kepler.gl/dist/middleware"), require("kepler.gl/processors"), require("kepler.gl/reducers"), require("kepler.gl/schemas"), require("react"), require("react-dom"), require("react-helmet"), require("react-redux"), require("react-virtualized/dist/commonjs"), require("redux"), require("styled-components"));
+	else if(typeof define === 'function' && define.amd)
+		define([, , , , , , , , , , , , ], factory);
+	else {
+		var a = typeof exports === 'object' ? factory(require("kepler.gl/actions"), require("kepler.gl/components"), require("kepler.gl/dist/middleware"), require("kepler.gl/processors"), require("kepler.gl/reducers"), require("kepler.gl/schemas"), require("react"), require("react-dom"), require("react-helmet"), require("react-redux"), require("react-virtualized/dist/commonjs"), require("redux"), require("styled-components")) : factory(root["KeplerGl"], root["KeplerGl"], root["KeplerGl"], root["KeplerGl"], root["KeplerGl"], root["KeplerGl"], root["React"], root["ReactDOM"], root["Helmet"], root["ReactRedux"], root["ReactVirtualized"], root["Redux"], root["styled"]);
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(window, function(__WEBPACK_EXTERNAL_MODULE_kepler_gl_actions__, __WEBPACK_EXTERNAL_MODULE_kepler_gl_components__, __WEBPACK_EXTERNAL_MODULE_kepler_gl_dist_middleware__, __WEBPACK_EXTERNAL_MODULE_kepler_gl_processors__, __WEBPACK_EXTERNAL_MODULE_kepler_gl_reducers__, __WEBPACK_EXTERNAL_MODULE_kepler_gl_schemas__, __WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_react_dom__, __WEBPACK_EXTERNAL_MODULE_react_helmet__, __WEBPACK_EXTERNAL_MODULE_react_redux__, __WEBPACK_EXTERNAL_MODULE_react_virtualized_dist_commonjs__, __WEBPACK_EXTERNAL_MODULE_redux__, __WEBPACK_EXTERNAL_MODULE_styled_components__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./lib/keplergl/main.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./lib/keplergl/components/app.js":
+/*!****************************************!*\
+  !*** ./lib/keplergl/components/app.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports[\"default\"] = void 0;\n\nvar _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\"));\n\nvar _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/createClass.js\"));\n\nvar _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ \"./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js\"));\n\nvar _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ \"./node_modules/@babel/runtime/helpers/getPrototypeOf.js\"));\n\nvar _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ \"./node_modules/@babel/runtime/helpers/inherits.js\"));\n\nvar _react = _interopRequireDefault(__webpack_require__(/*! react */ \"react\"));\n\nvar _components = __webpack_require__(/*! kepler.gl/components */ \"kepler.gl/components\");\n\nvar _panelHeader = _interopRequireDefault(__webpack_require__(/*! ./panel-header */ \"./lib/keplergl/components/panel-header.js\"));\n\nvar _sideBar = _interopRequireDefault(__webpack_require__(/*! ./side-bar */ \"./lib/keplergl/components/side-bar.js\"));\n\n// Copyright (c) 2019 Uber Technologies, Inc.\n//\n// Permission is hereby granted, free of charge, to any person obtaining a copy\n// of this software and associated documentation files (the \"Software\"), to deal\n// in the Software without restriction, including without limitation the rights\n// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n// copies of the Software, and to permit persons to whom the Software is\n// furnished to do so, subject to the following conditions:\n//\n// The above copyright notice and this permission notice shall be included in\n// all copies or substantial portions of the Software.\n//\n// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n// THE SOFTWARE.\nvar ReactVirtualized = __webpack_require__(/*! react-virtualized/dist/commonjs */ \"react-virtualized/dist/commonjs\");\n\nvar ReactHelmet = __webpack_require__(/*! react-helmet */ \"react-helmet\");\n\nvar Helmet = ReactHelmet ? ReactHelmet.Helmet : null;\nvar AutoSizer = ReactVirtualized.AutoSizer;\n\nvar CustomAddDataButtonFactory = function CustomAddDataButtonFactory() {\n  var CustomAddDataButton = function CustomAddDataButton() {\n    return _react[\"default\"].createElement(\"div\", null);\n  };\n\n  return CustomAddDataButton;\n};\n\nvar KeplerGl = (0, _components.injectComponents)([[_components.AddDataButtonFactory, CustomAddDataButtonFactory], [_components.SidebarFactory, _sideBar[\"default\"]], [_components.PanelHeaderFactory, _panelHeader[\"default\"]]]);\nvar MAPBOX_TOKEN = \"pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoiY2pza3FrOXh6MW05dTQzcWd1M3I3c2E0eCJ9.z0MFFrHYNbdK-QVHKrdepw\"; // eslint-disable-line\n\nvar App =\n/*#__PURE__*/\nfunction (_React$Component) {\n  (0, _inherits2[\"default\"])(App, _React$Component);\n\n  function App() {\n    (0, _classCallCheck2[\"default\"])(this, App);\n    return (0, _possibleConstructorReturn2[\"default\"])(this, (0, _getPrototypeOf2[\"default\"])(App).apply(this, arguments));\n  }\n\n  (0, _createClass2[\"default\"])(App, [{\n    key: \"render\",\n    value: function render() {\n      return _react[\"default\"].createElement(\"div\", null, Helmet ? _react[\"default\"].createElement(Helmet, null, _react[\"default\"].createElement(\"meta\", {\n        charSet: \"utf-8\"\n      }), _react[\"default\"].createElement(\"title\", null, \"Kepler.gl Jupyter\"), _react[\"default\"].createElement(\"link\", {\n        rel: \"stylesheet\",\n        href: \"http://d1a3f4spazzrp4.cloudfront.net/kepler.gl/uber-fonts/4.0.0/superfine.css\"\n      }), _react[\"default\"].createElement(\"link\", {\n        rel: \"stylesheet\",\n        href: \"http://api.tiles.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css\"\n      }), _react[\"default\"].createElement(\"style\", {\n        type: \"text/css\"\n      }, \"font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif;\\n              font-weight: 400;\\n              font-size: 0.875em;\\n              line-height: 1.71429;\\n              *,\\n              *:before,\\n              *:after {\\n                -webkit-box-sizing: border-box;\\n                -moz-box-sizing: border-box;\\n                box-sizing: border-box;\\n              }\\n              body {\\n                margin: 0; padding: 0;\\n              }\")) : null, _react[\"default\"].createElement(\"div\", {\n        style: {\n          position: 'absolute',\n          width: '100%',\n          height: '100%'\n        }\n      }, _react[\"default\"].createElement(AutoSizer, null, function (_ref) {\n        var height = _ref.height,\n            width = _ref.width;\n        return _react[\"default\"].createElement(KeplerGl, {\n          mapboxApiAccessToken: MAPBOX_TOKEN,\n          width: width || 1200,\n          height: height || 800,\n          appName: \"Kepler.gl Jupyter\",\n          version: \"0.1.0\"\n        });\n      })));\n    }\n  }]);\n  return App;\n}(_react[\"default\"].Component);\n\nvar _default = App;\nexports[\"default\"] = _default;\n\n//# sourceURL=webpack:///./lib/keplergl/components/app.js?");
+
+/***/ }),
+
+/***/ "./lib/keplergl/components/panel-header.js":
+/*!*************************************************!*\
+  !*** ./lib/keplergl/components/panel-header.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.CustomPanelHeaderFactory = CustomPanelHeaderFactory;\nexports[\"default\"] = void 0;\n\nvar _objectSpread2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/objectSpread */ \"./node_modules/@babel/runtime/helpers/objectSpread.js\"));\n\nvar _components = __webpack_require__(/*! kepler.gl/components */ \"kepler.gl/components\");\n\n// Copyright (c) 2019 Uber Technologies, Inc.\n//\n// Permission is hereby granted, free of charge, to any person obtaining a copy\n// of this software and associated documentation files (the \"Software\"), to deal\n// in the Software without restriction, including without limitation the rights\n// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n// copies of the Software, and to permit persons to whom the Software is\n// furnished to do so, subject to the following conditions:\n//\n// The above copyright notice and this permission notice shall be included in\n// all copies or substantial portions of the Software.\n//\n// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n// THE SOFTWARE.\n// TODO: Move the doc to public repo\nvar KEPLER_DOC = 'https://github.com/keplergl/kepler.gl/blob/master/docs/keplergl-jupyter/user-guide.md';\n\nfunction CustomPanelHeaderFactory() {\n  var PanelHeader = (0, _components.PanelHeaderFactory)();\n  PanelHeader.defaultProps = (0, _objectSpread2[\"default\"])({}, PanelHeader.defaultProps, {\n    actionItems: [{\n      id: 'docs',\n      label: 'Docs',\n      iconComponent: _components.Icons.Docs,\n      href: KEPLER_DOC,\n      blank: true,\n      tooltip: 'Documentation',\n      onClick: function onClick() {}\n    }]\n  });\n  return PanelHeader;\n}\n\nvar _default = CustomPanelHeaderFactory;\nexports[\"default\"] = _default;\n\n//# sourceURL=webpack:///./lib/keplergl/components/panel-header.js?");
+
+/***/ }),
+
+/***/ "./lib/keplergl/components/root.js":
+/*!*****************************************!*\
+  !*** ./lib/keplergl/components/root.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports[\"default\"] = void 0;\n\nvar _react = _interopRequireDefault(__webpack_require__(/*! react */ \"react\"));\n\nvar _reactDom = _interopRequireDefault(__webpack_require__(/*! react-dom */ \"react-dom\"));\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"react-redux\");\n\nvar _document = _interopRequireDefault(__webpack_require__(/*! global/document */ \"./node_modules/global/document.js\"));\n\nvar _app = _interopRequireDefault(__webpack_require__(/*! ./app */ \"./lib/keplergl/components/app.js\"));\n\n// Copyright (c) 2019 Uber Technologies, Inc.\n//\n// Permission is hereby granted, free of charge, to any person obtaining a copy\n// of this software and associated documentation files (the \"Software\"), to deal\n// in the Software without restriction, including without limitation the rights\n// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n// copies of the Software, and to permit persons to whom the Software is\n// furnished to do so, subject to the following conditions:\n//\n// The above copyright notice and this permission notice shall be included in\n// all copies or substantial portions of the Software.\n//\n// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n// THE SOFTWARE.\nfunction renderRoot(_ref) {\n  var id = _ref.id,\n      store = _ref.store,\n      height = _ref.height,\n      ele = _ref.ele;\n\n  var Root = function Root() {\n    return _react[\"default\"].createElement(_reactRedux.Provider, {\n      store: store\n    }, _react[\"default\"].createElement(_app[\"default\"], null));\n  };\n\n  var divElmt = _document[\"default\"].createElement('div');\n\n  divElmt.setAttribute('id', id);\n  divElmt.setAttribute('style', \"width: 100%; height: \".concat(height, \"px\"));\n\n  _reactDom[\"default\"].render(_react[\"default\"].createElement(Root, null), ele.appendChild(divElmt));\n}\n\nvar _default = renderRoot;\nexports[\"default\"] = _default;\n\n//# sourceURL=webpack:///./lib/keplergl/components/root.js?");
+
+/***/ }),
+
+/***/ "./lib/keplergl/components/side-bar.js":
+/*!*********************************************!*\
+  !*** ./lib/keplergl/components/side-bar.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports[\"default\"] = void 0;\n\nvar _taggedTemplateLiteral2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/taggedTemplateLiteral */ \"./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js\"));\n\nvar _react = _interopRequireDefault(__webpack_require__(/*! react */ \"react\"));\n\nvar _components = __webpack_require__(/*! kepler.gl/components */ \"kepler.gl/components\");\n\nvar _styledComponents = _interopRequireDefault(__webpack_require__(/*! styled-components */ \"styled-components\"));\n\nfunction _templateObject() {\n  var data = (0, _taggedTemplateLiteral2[\"default\"])([\"\\n  .side-panel--container {\\n    transform:scale(0.85);\\n    transform-origin: top left;\\n    height: 117.64%;\\n    padding-top: 0;\\n    padding-right: 0;\\n    padding-bottom: 0;\\n    padding-left: 0;\\n\\n    .side-bar {\\n      height: 100%;\\n    }\\n    .side-bar__close {\\n      right: -30px;\\n      top: 14px;\\n    }\\n  }\\n\"]);\n\n  _templateObject = function _templateObject() {\n    return data;\n  };\n\n  return data;\n}\n\nvar StyledSideBarContainer = _styledComponents[\"default\"].div(_templateObject()); // Custom sidebar will render kepler.gl default side bar\n// adding a wrapper component to edit its style\n\n\nfunction CustomSidebarFactory() {\n  var CloseButton = (0, _components.CollapseButtonFactory)();\n  var Sidebar = (0, _components.SidebarFactory)(CloseButton);\n\n  var CustomSidebar = function CustomSidebar(props) {\n    return _react[\"default\"].createElement(StyledSideBarContainer, null, _react[\"default\"].createElement(Sidebar, props));\n  };\n\n  return CustomSidebar;\n}\n\nvar _default = CustomSidebarFactory;\nexports[\"default\"] = _default;\n\n//# sourceURL=webpack:///./lib/keplergl/components/side-bar.js?");
+
+/***/ }),
+
+/***/ "./lib/keplergl/kepler.gl.js":
+/*!***********************************!*\
+  !*** ./lib/keplergl/kepler.gl.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.addDataConfigToKeplerGl = addDataConfigToKeplerGl;\nexports.dataToDatasets = dataToDatasets;\nexports[\"default\"] = void 0;\n\nvar _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\"));\n\nvar _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/createClass.js\"));\n\nvar _actions = __webpack_require__(/*! kepler.gl/actions */ \"kepler.gl/actions\");\n\nvar _schemas = __webpack_require__(/*! kepler.gl/schemas */ \"kepler.gl/schemas\");\n\nvar _root = _interopRequireDefault(__webpack_require__(/*! ./components/root */ \"./lib/keplergl/components/root.js\"));\n\nvar _store = _interopRequireDefault(__webpack_require__(/*! ./store */ \"./lib/keplergl/store.js\"));\n\nvar _utils = __webpack_require__(/*! ./utils */ \"./lib/keplergl/utils.js\");\n\nvar _log = _interopRequireDefault(__webpack_require__(/*! ../log */ \"./lib/log.js\"));\n\n// Copyright (c) 2019 Uber Technologies, Inc.\n//\n// Permission is hereby granted, free of charge, to any person obtaining a copy\n// of this software and associated documentation files (the \"Software\"), to deal\n// in the Software without restriction, including without limitation the rights\n// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n// copies of the Software, and to permit persons to whom the Software is\n// furnished to do so, subject to the following conditions:\n//\n// The above copyright notice and this permission notice shall be included in\n// all copies or substantial portions of the Software.\n//\n// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n// THE SOFTWARE.\nvar getData = function getData(that) {\n  return that.model.get('data');\n};\n\nvar getConfig = function getConfig(that) {\n  return that.model.get('config');\n};\n\nvar getHeight = function getHeight(that) {\n  return that.model.get('height');\n};\n\nvar DOM_EL_ID = 'keplergl';\nvar counter = 0;\nvar NONE_UPDATE_ACTIONS = [_actions.ActionTypes.REGISTER_ENTRY, _actions.ActionTypes.DELETE_ENTRY, _actions.ActionTypes.RENAME_ENTRY, _actions.ActionTypes.LOAD_MAP_STYLES, _actions.ActionTypes.LAYER_HOVER];\n\nfunction getConfigInStore() {\n  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},\n      _ref$hash = _ref.hash,\n      hash = _ref$hash === void 0 ? true : _ref$hash,\n      store = _ref.store;\n\n  if (store) {\n    var currentState = store.getState().keplerGl.map;\n\n    var currentValue = _schemas.KeplerGlSchema.getConfigToSave(currentState);\n\n    return hash ? JSON.stringify(currentValue) : currentValue;\n  }\n\n  return {};\n}\n\nfunction getDatasetsInStore(store) {\n  if (store) {\n    return store.getState().keplerGl.map.visState.datasets;\n  }\n}\n\nvar KeplerGlJupyter =\n/*#__PURE__*/\nfunction () {\n  function KeplerGlJupyter() {\n    (0, _classCallCheck2[\"default\"])(this, KeplerGlJupyter);\n    this.id = \"\".concat(DOM_EL_ID, \"-\").concat(counter);\n    counter++;\n    this.mapUpdateCounter = 0;\n  }\n\n  (0, _createClass2[\"default\"])(KeplerGlJupyter, [{\n    key: \"create\",\n    value: function create(that) {\n      (0, _log[\"default\"])('kepler.gl create');\n      var previousValue;\n\n      function handleStoreChange(action, nextStore) {\n        (0, _log[\"default\"])(action);\n\n        if (!action || NONE_UPDATE_ACTIONS.includes(action.type)) {\n          return;\n        }\n\n        var saveState = getConfigInStore({\n          hash: false,\n          store: nextStore\n        });\n        var hash = JSON.stringify(saveState); // should not update model after first UPDATE_MAP action\n        // when component first mounted\n\n        if (previousValue !== hash && this.mapUpdateCounter) {\n          // keplerGl State has changed\n          (0, _log[\"default\"])('store state has changed, update model');\n          (0, _log[\"default\"])(previousValue);\n          (0, _log[\"default\"])(hash);\n          previousValue = hash;\n          that.model.set({\n            config: saveState\n          }); // that.model.save_changes();\n\n          that.touch();\n        }\n\n        if (action.type === _actions.ActionTypes.UPDATE_MAP) {\n          this.mapUpdateCounter++;\n        }\n      }\n\n      this.store = (0, _store[\"default\"])(handleStoreChange.bind(this));\n      var height = getHeight(that);\n      (0, _root[\"default\"])({\n        id: this.id,\n        store: this.store,\n        height: height,\n        ele: that.el\n      });\n      var data = getData(that);\n      var config = getConfig(that);\n      (0, _log[\"default\"])('<<<<<<<< render finished! >>>>>>>>>'); // After rendering the component,\n      // we add the data that's already in the model\n\n      var hasData = data && Object.keys(data).length;\n      var hasConfig = config && config.version;\n\n      if (hasData) {\n        (0, _log[\"default\"])('data already in model');\n        addDataConfigToKeplerGl({\n          data: data,\n          config: config,\n          store: this.store\n        });\n      } else if (hasConfig) {\n        (0, _log[\"default\"])('config already in model');\n        this.onConfigChange(that);\n      }\n    }\n  }, {\n    key: \"onDataChange\",\n    value: function onDataChange(that) {\n      (0, _log[\"default\"])('kepler.gl onDataChange');\n      var data = getData(that);\n      addDataConfigToKeplerGl({\n        data: data,\n        store: this.store\n      });\n    }\n  }, {\n    key: \"onConfigChange\",\n    value: function onConfigChange(that) {\n      (0, _log[\"default\"])('kepler.gl onConfigChange');\n      var config = getConfig(that);\n      var currentValue = getConfigInStore({\n        hash: true,\n        store: this.store\n      });\n\n      if (currentValue === JSON.stringify(config)) {\n        // calling model.set('config') inside the js component will trigger another onConfigChange\n        (0, _log[\"default\"])('onConfigChange: config is the same as saved in store');\n        return;\n      }\n\n      this.store.dispatch((0, _actions.addDataToMap)({\n        // reuse datasets in state\n        // a hack to apply config to existing data\n        datasets: Object.values(getDatasetsInStore(this.store)).map(function (d) {\n          return {\n            info: {\n              id: d.id,\n              label: d.label,\n              color: d.color\n            },\n            data: {\n              fields: d.fields,\n              rows: d.allData\n            }\n          };\n        }),\n        config: config,\n        options: {\n          centerMap: false\n        }\n      }));\n    }\n  }]);\n  return KeplerGlJupyter;\n}();\n\nfunction addDataConfigToKeplerGl(_ref2) {\n  var inputData = _ref2.data,\n      config = _ref2.config,\n      options = _ref2.options,\n      store = _ref2.store;\n  var data = inputData ? dataToDatasets(inputData) : [];\n  (0, _log[\"default\"])(data);\n  var results = (0, _utils.loadJupyterData)(data);\n  var succeeded = results.filter(function (r) {\n    return r && r.data;\n  });\n  (0, _log[\"default\"])('addDataConfigToKeplerGl');\n  (0, _log[\"default\"])(succeeded);\n  (0, _log[\"default\"])(config);\n  store.dispatch((0, _actions.addDataToMap)({\n    datasets: succeeded,\n    config: config,\n    options: options || {\n      centerMap: true\n    }\n  }));\n}\n\nfunction dataToDatasets(data) {\n  return Object.keys(data).map(function (key) {\n    return {\n      id: key,\n      data: data[key]\n    };\n  });\n}\n\nvar _default = KeplerGlJupyter;\nexports[\"default\"] = _default;\n\n//# sourceURL=webpack:///./lib/keplergl/kepler.gl.js?");
+
+/***/ }),
+
+/***/ "./lib/keplergl/main.js":
+/*!******************************!*\
+  !*** ./lib/keplergl/main.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nvar _store = _interopRequireDefault(__webpack_require__(/*! ./store */ \"./lib/keplergl/store.js\"));\n\nvar _root = _interopRequireDefault(__webpack_require__(/*! ./components/root */ \"./lib/keplergl/components/root.js\"));\n\nvar _document = _interopRequireDefault(__webpack_require__(/*! global/document */ \"./node_modules/global/document.js\"));\n\nvar _window = _interopRequireDefault(__webpack_require__(/*! global/window */ \"./node_modules/global/window.js\"));\n\nvar _kepler = __webpack_require__(/*! ./kepler.gl */ \"./lib/keplergl/kepler.gl.js\");\n\n// Copyright (c) 2019 Uber Technologies, Inc.\n//\n// Permission is hereby granted, free of charge, to any person obtaining a copy\n// of this software and associated documentation files (the \"Software\"), to deal\n// in the Software without restriction, including without limitation the rights\n// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n// copies of the Software, and to permit persons to whom the Software is\n// furnished to do so, subject to the following conditions:\n//\n// The above copyright notice and this permission notice shall be included in\n// all copies or substantial portions of the Software.\n//\n// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n// THE SOFTWARE.\n// NOTE: this is only used for exporting html template\nvar map = function initKeplerGl() {\n  var id = 'keplergl-0';\n  var store = (0, _store[\"default\"])();\n  return {\n    render: function render() {\n      (0, _root[\"default\"])({\n        id: id,\n        store: store,\n        ele: _document[\"default\"].body\n      });\n    },\n    store: store\n  };\n}();\n\nmap.render();\n\n(function loadDataConfig(keplerGlMap) {\n  var _ref = _window[\"default\"].__keplerglDataConfig || {},\n      data = _ref.data,\n      config = _ref.config,\n      options = _ref.options;\n\n  (0, _kepler.addDataConfigToKeplerGl)({\n    data: data,\n    config: config,\n    options: options,\n    store: keplerGlMap.store\n  });\n})(map);\n\n//# sourceURL=webpack:///./lib/keplergl/main.js?");
+
+/***/ }),
+
+/***/ "./lib/keplergl/store.js":
+/*!*******************************!*\
+  !*** ./lib/keplergl/store.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports[\"default\"] = void 0;\n\nvar _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ \"./node_modules/@babel/runtime/helpers/toConsumableArray.js\"));\n\nvar _redux = __webpack_require__(/*! redux */ \"redux\");\n\nvar _reducers = __webpack_require__(/*! kepler.gl/reducers */ \"kepler.gl/reducers\");\n\nvar _middleware = __webpack_require__(/*! kepler.gl/dist/middleware */ \"kepler.gl/dist/middleware\");\n\n// Copyright (c) 2019 Uber Technologies, Inc.\n//\n// Permission is hereby granted, free of charge, to any person obtaining a copy\n// of this software and associated documentation files (the \"Software\"), to deal\n// in the Software without restriction, including without limitation the rights\n// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n// copies of the Software, and to permit persons to whom the Software is\n// furnished to do so, subject to the following conditions:\n//\n// The above copyright notice and this permission notice shall be included in\n// all copies or substantial portions of the Software.\n//\n// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n// THE SOFTWARE.\n// TODO: remove this after added middleware to files\nvar customizedKeplerGlReducer = _reducers.keplerGlReducer.initialState({\n  uiState: {\n    currentModal: null,\n    activeSidePanel: null\n  }\n});\n\nvar reducers = (0, _redux.combineReducers)({\n  // mount keplerGl reducer\n  keplerGl: customizedKeplerGlReducer\n});\n\nvar createAppStore = function createAppStore(onChangeHandler) {\n  var updatesMiddleware = function updatesMiddleware(store) {\n    return function (next) {\n      return function (action) {\n        // exclude some actions\n        // Call the next dispatch method in the middleware chain.\n\n        /* eslint-disable callback-return */\n        var returnValue = next(action);\n        /* eslint-enable callback-return */\n        // state after dispatch\n\n        if (typeof onChangeHandler === 'function') {\n          onChangeHandler(action, store);\n        } // This will likely be the action itself, unless\n        // a middleware further in chain changed it.\n\n\n        return returnValue;\n      };\n    };\n  };\n\n  var middlewares = (0, _middleware.enhanceReduxMiddleware)([updatesMiddleware]);\n  var enhancers = [_redux.applyMiddleware.apply(void 0, (0, _toConsumableArray2[\"default\"])(middlewares))];\n  var store = (0, _redux.createStore)(reducers, {}, _redux.compose.apply(void 0, enhancers));\n  return store;\n};\n\nvar _default = createAppStore;\nexports[\"default\"] = _default;\n\n//# sourceURL=webpack:///./lib/keplergl/store.js?");
+
+/***/ }),
+
+/***/ "./lib/keplergl/utils.js":
+/*!*******************************!*\
+  !*** ./lib/keplergl/utils.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.loadJupyterData = loadJupyterData;\n\nvar _typeof2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/typeof */ \"./node_modules/@babel/runtime/helpers/typeof.js\"));\n\nvar _processors = __webpack_require__(/*! kepler.gl/processors */ \"kepler.gl/processors\");\n\nvar _log = _interopRequireDefault(__webpack_require__(/*! ../log */ \"./lib/log.js\"));\n\nvar _console = _interopRequireDefault(__webpack_require__(/*! global/console */ \"./node_modules/global/console.js\"));\n\n// Copyright (c) 2019 Uber Technologies, Inc.\n//\n// Permission is hereby granted, free of charge, to any person obtaining a copy\n// of this software and associated documentation files (the \"Software\"), to deal\n// in the Software without restriction, including without limitation the rights\n// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n// copies of the Software, and to permit persons to whom the Software is\n// furnished to do so, subject to the following conditions:\n//\n// The above copyright notice and this permission notice shall be included in\n// all copies or substantial portions of the Software.\n//\n// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n// THE SOFTWARE.\nfunction handleJuptyerDataFormat(dataEntry) {\n  // This makes passing data between Jupyter the iframe easier\n  // detect data type here\n  (0, _log[\"default\"])('handleJuptyerDataFormat');\n  var data = dataEntry.data,\n      id = dataEntry.id;\n  var parsed = data;\n  var type = 'csv';\n\n  if ((0, _typeof2[\"default\"])(data) === 'object') {\n    if (data.columns && data.data && data.index) {\n      // Data is parsed as a Dataframe\n      (0, _log[\"default\"])('data is a dataframe');\n      type = 'df'; // parsed = {fields: data.columns, data: data.data};\n    } else {\n      // assume is geojson\n      type = 'json';\n    }\n  } else if (typeof data === 'string') {\n    try {\n      parsed = JSON.parse(data);\n      type = 'json';\n    } catch (e) {// assume it is csv\n    }\n  }\n\n  return {\n    data: parsed,\n    type: type,\n    id: id\n  };\n}\n\nfunction processReceivedData(_ref) {\n  var data = _ref.data,\n      info = _ref.info;\n  // assume there is only 1 file\n  (0, _log[\"default\"])('processReceivedData');\n  var processed;\n\n  try {\n    processed = info.queryType === 'csv' ? (0, _processors.processCsvData)(data) : info.queryType === 'json' ? (0, _processors.processGeojson)(data) : info.queryType === 'df' ? processDataFrame(data) : null;\n  } catch (e) {\n    _console[\"default\"].log(\"Kepler.gl fails to parse data, detected data\\n    format is \".concat(info.queryType), e);\n  }\n\n  return {\n    data: processed,\n    info: info\n  };\n}\n\nfunction processDataFrame(data) {\n  var fields = data.columns.map(function (name) {\n    return {\n      name: name\n    };\n  });\n  var rows = data.data; // kepler.gl will detect field types\n\n  return {\n    fields: fields,\n    rows: rows\n  };\n}\n\nfunction loadJupyterData(rawData) {\n  var dataToLoad = rawData.map(handleJuptyerDataFormat).map(function (rd) {\n    return {\n      data: rd.data,\n      info: {\n        id: rd.id,\n        label: rd.id,\n        queryType: rd.type,\n        queryOption: 'jupyter'\n      }\n    };\n  });\n  return dataToLoad.map(processReceivedData);\n}\n\n//# sourceURL=webpack:///./lib/keplergl/utils.js?");
+
+/***/ }),
+
+/***/ "./lib/log.js":
+/*!********************!*\
+  !*** ./lib/log.js ***!
+  \********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var global_console__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! global/console */ \"./node_modules/global/console.js\");\n/* harmony import */ var global_console__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(global_console__WEBPACK_IMPORTED_MODULE_0__);\n// Copyright (c) 2019 Uber Technologies, Inc.\n//\n// Permission is hereby granted, free of charge, to any person obtaining a copy\n// of this software and associated documentation files (the \"Software\"), to deal\n// in the Software without restriction, including without limitation the rights\n// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n// copies of the Software, and to permit persons to whom the Software is\n// furnished to do so, subject to the following conditions:\n//\n// The above copyright notice and this permission notice shall be included in\n// all copies or substantial portions of the Software.\n//\n// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\n// THE SOFTWARE.\n\n\n\nfunction log(...args) {\n  if (true) {\n    global_console__WEBPACK_IMPORTED_MODULE_0___default.a.log(...args);\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (log);\n\n\n//# sourceURL=webpack:///./lib/log.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _arrayWithoutHoles(arr) {\n  if (Array.isArray(arr)) {\n    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {\n      arr2[i] = arr[i];\n    }\n\n    return arr2;\n  }\n}\n\nmodule.exports = _arrayWithoutHoles;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _assertThisInitialized(self) {\n  if (self === void 0) {\n    throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\");\n  }\n\n  return self;\n}\n\nmodule.exports = _assertThisInitialized;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/assertThisInitialized.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/classCallCheck.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _classCallCheck(instance, Constructor) {\n  if (!(instance instanceof Constructor)) {\n    throw new TypeError(\"Cannot call a class as a function\");\n  }\n}\n\nmodule.exports = _classCallCheck;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/classCallCheck.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/createClass.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _defineProperties(target, props) {\n  for (var i = 0; i < props.length; i++) {\n    var descriptor = props[i];\n    descriptor.enumerable = descriptor.enumerable || false;\n    descriptor.configurable = true;\n    if (\"value\" in descriptor) descriptor.writable = true;\n    Object.defineProperty(target, descriptor.key, descriptor);\n  }\n}\n\nfunction _createClass(Constructor, protoProps, staticProps) {\n  if (protoProps) _defineProperties(Constructor.prototype, protoProps);\n  if (staticProps) _defineProperties(Constructor, staticProps);\n  return Constructor;\n}\n\nmodule.exports = _createClass;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/createClass.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _defineProperty(obj, key, value) {\n  if (key in obj) {\n    Object.defineProperty(obj, key, {\n      value: value,\n      enumerable: true,\n      configurable: true,\n      writable: true\n    });\n  } else {\n    obj[key] = value;\n  }\n\n  return obj;\n}\n\nmodule.exports = _defineProperty;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/defineProperty.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/getPrototypeOf.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _getPrototypeOf(o) {\n  module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {\n    return o.__proto__ || Object.getPrototypeOf(o);\n  };\n  return _getPrototypeOf(o);\n}\n\nmodule.exports = _getPrototypeOf;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/getPrototypeOf.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/inherits.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/inherits.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ \"./node_modules/@babel/runtime/helpers/setPrototypeOf.js\");\n\nfunction _inherits(subClass, superClass) {\n  if (typeof superClass !== \"function\" && superClass !== null) {\n    throw new TypeError(\"Super expression must either be null or a function\");\n  }\n\n  subClass.prototype = Object.create(superClass && superClass.prototype, {\n    constructor: {\n      value: subClass,\n      writable: true,\n      configurable: true\n    }\n  });\n  if (superClass) setPrototypeOf(subClass, superClass);\n}\n\nmodule.exports = _inherits;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/inherits.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/interopRequireDefault.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _interopRequireDefault(obj) {\n  return obj && obj.__esModule ? obj : {\n    \"default\": obj\n  };\n}\n\nmodule.exports = _interopRequireDefault;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/interopRequireDefault.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _iterableToArray(iter) {\n  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter);\n}\n\nmodule.exports = _iterableToArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/iterableToArray.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _nonIterableSpread() {\n  throw new TypeError(\"Invalid attempt to spread non-iterable instance\");\n}\n\nmodule.exports = _nonIterableSpread;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/nonIterableSpread.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectSpread.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectSpread.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var defineProperty = __webpack_require__(/*! ./defineProperty */ \"./node_modules/@babel/runtime/helpers/defineProperty.js\");\n\nfunction _objectSpread(target) {\n  for (var i = 1; i < arguments.length; i++) {\n    var source = arguments[i] != null ? arguments[i] : {};\n    var ownKeys = Object.keys(source);\n\n    if (typeof Object.getOwnPropertySymbols === 'function') {\n      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {\n        return Object.getOwnPropertyDescriptor(source, sym).enumerable;\n      }));\n    }\n\n    ownKeys.forEach(function (key) {\n      defineProperty(target, key, source[key]);\n    });\n  }\n\n  return target;\n}\n\nmodule.exports = _objectSpread;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/objectSpread.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var _typeof = __webpack_require__(/*! ../helpers/typeof */ \"./node_modules/@babel/runtime/helpers/typeof.js\");\n\nvar assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized */ \"./node_modules/@babel/runtime/helpers/assertThisInitialized.js\");\n\nfunction _possibleConstructorReturn(self, call) {\n  if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) {\n    return call;\n  }\n\n  return assertThisInitialized(self);\n}\n\nmodule.exports = _possibleConstructorReturn;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _setPrototypeOf(o, p) {\n  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {\n    o.__proto__ = p;\n    return o;\n  };\n\n  return _setPrototypeOf(o, p);\n}\n\nmodule.exports = _setPrototypeOf;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/setPrototypeOf.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _taggedTemplateLiteral(strings, raw) {\n  if (!raw) {\n    raw = strings.slice(0);\n  }\n\n  return Object.freeze(Object.defineProperties(strings, {\n    raw: {\n      value: Object.freeze(raw)\n    }\n  }));\n}\n\nmodule.exports = _taggedTemplateLiteral;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ \"./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js\");\n\nvar iterableToArray = __webpack_require__(/*! ./iterableToArray */ \"./node_modules/@babel/runtime/helpers/iterableToArray.js\");\n\nvar nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ \"./node_modules/@babel/runtime/helpers/nonIterableSpread.js\");\n\nfunction _toConsumableArray(arr) {\n  return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();\n}\n\nmodule.exports = _toConsumableArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/toConsumableArray.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/typeof.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _typeof2(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof2(obj); }\n\nfunction _typeof(obj) {\n  if (typeof Symbol === \"function\" && _typeof2(Symbol.iterator) === \"symbol\") {\n    module.exports = _typeof = function _typeof(obj) {\n      return _typeof2(obj);\n    };\n  } else {\n    module.exports = _typeof = function _typeof(obj) {\n      return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : _typeof2(obj);\n    };\n  }\n\n  return _typeof(obj);\n}\n\nmodule.exports = _typeof;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/typeof.js?");
+
+/***/ }),
+
+/***/ "./node_modules/global/console.js":
+/*!****************************************!*\
+  !*** ./node_modules/global/console.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = console;\n\n\n//# sourceURL=webpack:///./node_modules/global/console.js?");
+
+/***/ }),
+
+/***/ "./node_modules/global/document.js":
+/*!*****************************************!*\
+  !*** ./node_modules/global/document.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("/* WEBPACK VAR INJECTION */(function(global) {var topLevel = typeof global !== 'undefined' ? global :\n    typeof window !== 'undefined' ? window : {}\nvar minDoc = __webpack_require__(/*! min-document */ 0);\n\nvar doccy;\n\nif (typeof document !== 'undefined') {\n    doccy = document;\n} else {\n    doccy = topLevel['__GLOBAL_DOCUMENT_CACHE@4'];\n\n    if (!doccy) {\n        doccy = topLevel['__GLOBAL_DOCUMENT_CACHE@4'] = minDoc;\n    }\n}\n\nmodule.exports = doccy;\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ \"./node_modules/webpack/buildin/global.js\")))\n\n//# sourceURL=webpack:///./node_modules/global/document.js?");
+
+/***/ }),
+
+/***/ "./node_modules/global/window.js":
+/*!***************************************!*\
+  !*** ./node_modules/global/window.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("/* WEBPACK VAR INJECTION */(function(global) {var win;\n\nif (typeof window !== \"undefined\") {\n    win = window;\n} else if (typeof global !== \"undefined\") {\n    win = global;\n} else if (typeof self !== \"undefined\"){\n    win = self;\n} else {\n    win = {};\n}\n\nmodule.exports = win;\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ \"./node_modules/webpack/buildin/global.js\")))\n\n//# sourceURL=webpack:///./node_modules/global/window.js?");
+
+/***/ }),
+
+/***/ "./node_modules/webpack/buildin/global.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn this;\n})();\n\ntry {\n\t// This works if eval is allowed (see CSP)\n\tg = g || new Function(\"return this\")();\n} catch (e) {\n\t// This works if the window reference is available\n\tif (typeof window === \"object\") g = window;\n}\n\n// g can still be undefined, but nothing to do about it...\n// We return undefined, instead of nothing here, so it's\n// easier to handle this case. if(!global) { ...}\n\nmodule.exports = g;\n\n\n//# sourceURL=webpack:///(webpack)/buildin/global.js?");
+
+/***/ }),
+
+/***/ 0:
+/*!******************************!*\
+  !*** min-document (ignored) ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/* (ignored) */\n\n//# sourceURL=webpack:///min-document_(ignored)?");
+
+/***/ }),
+
+/***/ "kepler.gl/actions":
+/*!***************************************************************************************************!*\
+  !*** external {"root":"KeplerGl","commonjs2":"kepler.gl/actions","commonjs":"kepler.gl/actions"} ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_kepler_gl_actions__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22KeplerGl%22,%22commonjs2%22:%22kepler.gl/actions%22,%22commonjs%22:%22kepler.gl/actions%22%7D?");
+
+/***/ }),
+
+/***/ "kepler.gl/components":
+/*!*********************************************************************************************************!*\
+  !*** external {"root":"KeplerGl","commonjs2":"kepler.gl/components","commonjs":"kepler.gl/components"} ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_kepler_gl_components__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22KeplerGl%22,%22commonjs2%22:%22kepler.gl/components%22,%22commonjs%22:%22kepler.gl/components%22%7D?");
+
+/***/ }),
+
+/***/ "kepler.gl/dist/middleware":
+/*!*******************************************************************************************************************!*\
+  !*** external {"root":"KeplerGl","commonjs2":"kepler.gl/dist/middleware","commonjs":"kepler.gl/dist/middleware"} ***!
+  \*******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_kepler_gl_dist_middleware__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22KeplerGl%22,%22commonjs2%22:%22kepler.gl/dist/middleware%22,%22commonjs%22:%22kepler.gl/dist/middleware%22%7D?");
+
+/***/ }),
+
+/***/ "kepler.gl/processors":
+/*!*********************************************************************************************************!*\
+  !*** external {"root":"KeplerGl","commonjs2":"kepler.gl/processors","commonjs":"kepler.gl/processors"} ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_kepler_gl_processors__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22KeplerGl%22,%22commonjs2%22:%22kepler.gl/processors%22,%22commonjs%22:%22kepler.gl/processors%22%7D?");
+
+/***/ }),
+
+/***/ "kepler.gl/reducers":
+/*!*****************************************************************************************************!*\
+  !*** external {"root":"KeplerGl","commonjs2":"kepler.gl/reducers","commonjs":"kepler.gl/reducers"} ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_kepler_gl_reducers__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22KeplerGl%22,%22commonjs2%22:%22kepler.gl/reducers%22,%22commonjs%22:%22kepler.gl/reducers%22%7D?");
+
+/***/ }),
+
+/***/ "kepler.gl/schemas":
+/*!***************************************************************************************************!*\
+  !*** external {"root":"KeplerGl","commonjs2":"kepler.gl/schemas","commonjs":"kepler.gl/schemas"} ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_kepler_gl_schemas__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22KeplerGl%22,%22commonjs2%22:%22kepler.gl/schemas%22,%22commonjs%22:%22kepler.gl/schemas%22%7D?");
+
+/***/ }),
+
+/***/ "react":
+/*!************************************************************************!*\
+  !*** external {"root":"React","commonjs2":"react","commonjs":"react"} ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_react__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22React%22,%22commonjs2%22:%22react%22,%22commonjs%22:%22react%22%7D?");
+
+/***/ }),
+
+/***/ "react-dom":
+/*!***********************************************************************************!*\
+  !*** external {"root":"ReactDOM","commonjs2":"react-dom","commonjs":"react-dom"} ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_react_dom__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22ReactDOM%22,%22commonjs2%22:%22react-dom%22,%22commonjs%22:%22react-dom%22%7D?");
+
+/***/ }),
+
+/***/ "react-helmet":
+/*!***************************************************************************************!*\
+  !*** external {"root":"Helmet","commonjs2":"react-helmet","commonjs":"react-helmet"} ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_react_helmet__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22Helmet%22,%22commonjs2%22:%22react-helmet%22,%22commonjs%22:%22react-helmet%22%7D?");
+
+/***/ }),
+
+/***/ "react-redux":
+/*!*****************************************************************************************!*\
+  !*** external {"root":"ReactRedux","commonjs2":"react-redux","commonjs":"react-redux"} ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_react_redux__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22ReactRedux%22,%22commonjs2%22:%22react-redux%22,%22commonjs%22:%22react-redux%22%7D?");
+
+/***/ }),
+
+/***/ "react-virtualized/dist/commonjs":
+/*!***************************************************************************************************************************************!*\
+  !*** external {"root":"ReactVirtualized","commonjs2":"react-virtualized/dist/commonjs","commonjs":"react-virtualized/dist/commonjs"} ***!
+  \***************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_react_virtualized_dist_commonjs__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22ReactVirtualized%22,%22commonjs2%22:%22react-virtualized/dist/commonjs%22,%22commonjs%22:%22react-virtualized/dist/commonjs%22%7D?");
+
+/***/ }),
+
+/***/ "redux":
+/*!************************************************************************!*\
+  !*** external {"root":"Redux","commonjs2":"redux","commonjs":"redux"} ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_redux__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22Redux%22,%22commonjs2%22:%22redux%22,%22commonjs%22:%22redux%22%7D?");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!*************************************************************************************************!*\
+  !*** external {"root":"styled","commonjs2":"styled-components","commonjs":"styled-components"} ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_styled_components__;\n\n//# sourceURL=webpack:///external_%7B%22root%22:%22styled%22,%22commonjs2%22:%22styled-components%22,%22commonjs%22:%22styled-components%22%7D?");
+
+/***/ })
+
+/******/ });
+});</script></body>
+</html>
